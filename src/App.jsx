@@ -21,7 +21,7 @@ const App = () => {
     return;
   };
   const deleteJob = async (id) => {
-    const res = await fetch(`/api/jobs/${id}`, {
+    const res = await fetch(`https://my-json-server.typicode.com/RohanQ17/jobsapi/jobs/${id}`, {
       method: 'DELETE',
     });
     return;

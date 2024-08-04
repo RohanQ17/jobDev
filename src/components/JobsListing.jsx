@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import Spninners from "./Spninners";
 import JobListing from "./JobListing";
 const JobsListing = ({ isHome = true }) => {
-  const apiUrl = isHome? "/api/jobs?_limit=3":"/api/jobs";
+  const apiUrl = isHome? "https://my-json-server.typicode.com/RohanQ17/jobsapi/jobs?_limit=3":"https://my-json-server.typicode.com/RohanQ17/jobsapi/jobs";
   const [jobs, setJobs] = useState([]);
   const [loading, setLoading] = useState(true);
 
