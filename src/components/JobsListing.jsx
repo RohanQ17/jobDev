@@ -27,10 +27,10 @@ const JobsListing = ({ isHome = true }) => {
   
   return (
     <div>
-      <section className="bg-indigo-50 px-7 py-8 rounded-lg">
+      <section className=" m-8  px-8 py-8 rounded-lg shadow-[0_1px_35px_17px] shadow-cyan-700 shadow- backdrop-blur-md">
       
         <div className="container-xl lg:container m-auto">
-          <h2 className="text-3xl font-sans font-bold text-blue-700 mb-6 text-center">
+          <h2 className="text-3xl font-sans font-bold text-white mb-6 text-center">
             Browse Jobs
           </h2>
           
