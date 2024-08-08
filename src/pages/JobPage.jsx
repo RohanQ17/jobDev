@@ -61,12 +61,12 @@ const JobPage = ({ deleteJob }) => {
             {job.company.contactPhone}
           </p>
           <br />
-          <div className="flex justify-center">
-            <button className=" block mt-10   bg-pahe px-8 py-3 text-white rounded-md font-sans font-semibold hover:scale-110 duration-150">
+          <div className="flex-col justify-center">
+            <button className=" mx-auto block mt-10   bg-pahe px-8 py-3 text-white rounded-md font-sans font-semibold hover:scale-110 duration-150">
               Apply Here
             </button>
             <button onClick={() => onDeleteClick(job.id)}
-            className=" block mt-10   bg-pahe px-8 py-3 text-white rounded-md font-sans font-semibold hover:scale-110 duration-150">
+            className=" mx-auto block mt-6   bg-gray-900 px-8 py-3 text-white rounded-md font-sans font-semibold hover:scale-110 duration-150">
               Delete Job
             </button>
             
