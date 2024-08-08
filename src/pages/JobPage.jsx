@@ -61,6 +61,7 @@ const JobPage = ({ deleteJob }) => {
 const singleJobLoader = async ({ params }) => {
   const res = await fetch(`https://my-json-server.typicode.com/RohanQ17/jobsapi/jobs/${params.id}`);
   const data = await res.json();
+  
   return data;
 };
 

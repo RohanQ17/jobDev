@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import Spninners from "./Spninners";
 import JobListing from "./JobListing";
 const JobsListing = ({ isHome = true }) => {
-  const apiUrl = isHome? "https://my-json-server.typicode.com/RohanQ17/jobsapi/jobs?_limit=3":"https://my-json-server.typicode.com/RohanQ17/jobsapi/jobs";
+  const apiUrl = isHome? "https://jobsdjango.onrender.com/jobs?_limit=3/":"https://jobsdjango.onrender.com/jobs/";
   const [jobs, setJobs] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -11,6 +11,7 @@ const JobsListing = ({ isHome = true }) => {
       try {
         const res = await fetch(apiUrl);
         const data = await res.json();
+        const pip = await fetch ('https://jobsdjango.onrender.com/jobs/')
         
         setJobs(data);
       } catch(error) {
