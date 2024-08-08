@@ -1,10 +1,25 @@
 import { useParams, useLoaderData } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import { toast } from 'react-toastify';
+
 const JobPage = ({ deleteJob }) => {
   const navigate = useNavigate();
   const { id } = useParams();
-  const job = useLoaderData();
 
+  const job = useLoaderData();
+  const onDeleteClick = (jobId) => {
+    const confirm = window.confirm(
+      'Are you sure you want to delete this listing?'
+    );
+
+    if (!confirm) return;
+
+    deleteJob(jobId);
+
+    toast.success('Job deleted successfully');
+
+    navigate('/jobs');
+  };
   
 
   return (
@@ -33,7 +48,7 @@ const JobPage = ({ deleteJob }) => {
             Comapany Info
           </h2>
           <h1 className="m-3 font-sans text-3xl font-semibold">
-            {job.company.name}
+            { job.company.name }
           </h1>
           <p className="font-sans m-3 text-xl">{job.company.description}</p>
           <h2 className="mt-3 mx-3 font-sans text-blue-800 text-lg ">
@@ -50,6 +65,10 @@ const JobPage = ({ deleteJob }) => {
             <button className=" block mt-10   bg-pahe px-8 py-3 text-white rounded-md font-sans font-semibold hover:scale-110 duration-150">
               Apply Here
             </button>
+            <button onClick={() => onDeleteClick(job.id)}
+            className=" block mt-10   bg-pahe px-8 py-3 text-white rounded-md font-sans font-semibold hover:scale-110 duration-150">
+              Delete Job
+            </button>
             
           </div>
         </div>
@@ -59,10 +78,10 @@ const JobPage = ({ deleteJob }) => {
 };
 
 const singleJobLoader = async ({ params }) => {
-  const res = await fetch(`https://my-json-server.typicode.com/RohanQ17/jobsapi/jobs/${params.id}`);
+  const res = await fetch(`https://jobsdjango.onrender.com/jobs/${params.id}`);
   const data = await res.json();
-  
-  return data;
+  const datasingle = Array.isArray(data) ? data[0] : data;
+  return datasingle;
 };
 
 export { JobPage as default, singleJobLoader };

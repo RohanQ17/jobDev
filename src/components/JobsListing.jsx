@@ -11,8 +11,6 @@ const JobsListing = ({ isHome = true }) => {
       try {
         const res = await fetch(apiUrl);
         const data = await res.json();
-        const pip = await fetch ('https://jobsdjango.onrender.com/jobs/')
-        
         setJobs(data);
       } catch(error) {
           console.log(error);
@@ -22,7 +20,7 @@ const JobsListing = ({ isHome = true }) => {
       }
     };
     fetchjobs();
-  }, []);
+  }, [jobs]);
 
   
   

@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
 const AddJobPage = ({ addJobSubmit }) => {
-    const[id,setId] = useState('99')
+  const[id,setId] = useState(Math.floor(Math.random() * 1000));
   const [title, setTitle] = useState('');
   const [type, setType] = useState('Full-Time');
   const [location, setLocation] = useState('');
@@ -15,7 +15,7 @@ const AddJobPage = ({ addJobSubmit }) => {
   const [contactPhone, setContactPhone] = useState('');
 
   const navigate = useNavigate();
-
+  
   const submitForm = (e) => {
     e.preventDefault();
 
@@ -35,7 +35,7 @@ const AddJobPage = ({ addJobSubmit }) => {
     };
   
     addJobSubmit(newJob);
-    toast.error("Jobs will not be updates as it is a mock api currently!");
+    toast.success("Your job was added !");
     navigate('/jobs');
     
   };

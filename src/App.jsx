@@ -11,7 +11,7 @@ import AddJobPage from "./pages/AddJobPage";
 const App = () => {
   // Add New Job
   const addJob = async (newJob) => {
-    const res = await fetch('/api/jobs', {
+    const res = await fetch('https://jobsdjango.onrender.com/jobs/', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -21,7 +21,7 @@ const App = () => {
     return;
   };
   const deleteJob = async (id) => {
-    const res = await fetch(`https://my-json-server.typicode.com/RohanQ17/jobsapi/jobs/${id}`, {
+    const res = await fetch(`https://jobsdjango.onrender.com/jobs/${id}`, {
       method: 'DELETE',
     });
     return;
@@ -32,7 +32,7 @@ const App = () => {
     <Route path='/' element={<MainLayout/>}>
      <Route index element ={<HomePage/>}/> {/* any route that wraps in layout follows the layout */}
      <Route path ='/jobs' element={<JobsPages/>}/>
-     <Route path = '/jobs/:id' element={<JobPage/>} loader={singleJobLoader} deleteJob={deleteJob}/> {/**colon makes it dynamic */}
+     <Route path = '/jobs/:id' element={<JobPage deleteJob={deleteJob}/>} loader={singleJobLoader} /> {/**colon makes it dynamic */}
      <Route path='/addJob' element={<AddJobPage addJobSubmit={addJob}/>}/>
     </Route>
     )
