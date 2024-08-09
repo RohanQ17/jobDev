@@ -78,7 +78,7 @@ const JobPage = ({ deleteJob }) => {
 };
 
 const singleJobLoader = async ({ params }) => {
-  const res = await fetch(`https://jobsdjango.onrender.com/jobs/${params.id}`);
+  const res = await fetch(`https://jobs-django.vercel.app/jobs/${params.id}`);
   const data = await res.json();
   const datasingle = Array.isArray(data) ? data[0] : data;
   return datasingle;
