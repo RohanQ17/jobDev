@@ -66,7 +66,7 @@ const JobPage = ({ deleteJob }) => {
               Apply Here
             </button>
             <button onClick={() => onDeleteClick(job.id)}
-            className=" mx-auto block mt-6   bg-gray-900 px-8 py-3 text-white rounded-md font-sans font-semibold hover:scale-110 duration-150">
+            className=" mx-auto mb-1 block mt-6   bg-gray-900 px-8 py-3 text-white rounded-md font-sans font-semibold hover:scale-110 duration-150">
               Delete Job
             </button>
             

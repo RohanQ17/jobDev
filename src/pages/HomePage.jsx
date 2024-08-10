@@ -6,7 +6,7 @@ import AllJobs from "../components/AllJobs"
 const HomePage = () => {
   return (
     <>
-      <Hero title="Become a Dev" subtitle="Find the Role catered to your own needs"/>
+      <Hero title="Welcome to NHK Jobs" subtitle="Find the Role catered to your own needs"/>
       <HomeCards/>
       <JobsListing/>
       <AllJobs/>

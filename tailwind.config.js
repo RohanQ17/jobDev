@@ -16,6 +16,7 @@ export default {
         'pahe': '#bc014ff3',
         'navi': '#025151',
         'bground':'#0a2541',
+        'hoverpahe': '#a70448f3',
       },
     },
   },
