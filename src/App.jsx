@@ -11,7 +11,7 @@ import AddJobPage from "./pages/AddJobPage";
 const App = () => {
   // Add New Job
   const addJob = async (newJob) => {
-    const res = await fetch('https://jobsdjango.onrender.com/jobs/', {
+    const res = await fetch('https://jobs-django.vercel.app/jobs/', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -21,7 +21,7 @@ const App = () => {
     return;
   };
   const deleteJob = async (id) => {
-    const res = await fetch(`https://jobsdjango.onrender.com/jobs/${id}`, {
+    const res = await fetch(`https://jobs-django.vercel.app/jobs/${id}`, {
       method: 'DELETE',
     });
     return;
